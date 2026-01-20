@@ -1,7 +1,5 @@
-<!-- NAVBAR -->
 <mat-toolbar class="navbar" [class.scrolled]="scrolled">
   <span class="logo">Bharath<span class="dot">.</span></span>
-
   <span class="spacer"></span>
 
   <nav class="nav-links">
@@ -13,24 +11,24 @@
     <button mat-button (click)="scroll(contact)">Contact</button>
   </nav>
 
+  <a class="resume-btn" href="/bharath-resume.pdf" download>
+    <mat-icon>description</mat-icon> Resume
+  </a>
   <button mat-icon-button class="hamburger" (click)="toggleMobileMenu()">
     <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
   </button>
-
-  <a class="resume-btn" href="/bharath-resume.pdf" download>
-    <mat-icon>description</mat-icon>
-    Resume
-  </a>
 </mat-toolbar>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" *ngIf="mobileMenuOpen">
+<div class="mobile-menu" [class.open]="mobileMenuOpen">
   <button mat-button (click)="scroll(home); toggleMobileMenu()">Home</button>
   <button mat-button (click)="scroll(skills); toggleMobileMenu()">Skills</button>
   <button mat-button (click)="scroll(experience); toggleMobileMenu()">Experience</button>
   <button mat-button (click)="scroll(projects); toggleMobileMenu()">Projects</button>
   <button mat-button (click)="scroll(achievements); toggleMobileMenu()">Achievements</button>
   <button mat-button (click)="scroll(contact); toggleMobileMenu()">Contact</button>
+  <!-- <a class="resume-btn-mobile" style="margin-bottom: 3px;" href="/bharath-resume.pdf" download>
+    <mat-icon>description</mat-icon> Download Resume
+  </a> -->
 </div>
 
 <section #home class="hero">
@@ -38,10 +36,9 @@
     <h1>Bharath R<span class="dot">.</span></h1>
     <h2>Angular Full Stack Developer</h2>
     <p>
-      I build scalable Angular applications and reliable backend systems, focused on clean architecture and real-world
-      business solutions.
+      I build scalable Angular applications and reliable backend systems
+      focused on clean architecture, productivity automation, and real-world solutions.
     </p>
-
     <div class="hero-actions">
       <button mat-raised-button color="primary" (click)="scroll(projects)">View Projects</button>
       <button mat-stroked-button color="primary" (click)="scroll(contact)">Contact Me</button>
@@ -49,126 +46,135 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section #skills class="section">
-  <h2>Technical Skills</h2>
+  <h2 class="section-title">Technical Skills</h2>
   <div class="underline"></div>
 
   <div class="card-grid">
     <mat-card class="skill-card">
       <h3>Frontend</h3>
-      <span class="badge">HTML</span>
-      <span class="badge">CSS</span>
-      <span class="badge">JavaScript</span>
-      <span class="badge">TypeScript</span>
-      <span class="badge">Angular</span>
-      <span class="badge">RxJS</span>
-      <span class="badge">Angular Material</span>
-      <span class="badge">Bootstrap</span>
+      <div class="badges">
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">Javascript</span>
+        <span class="badge">Angular</span>
+        <span class="badge">TypeScript</span>
+        <span class="badge">RxJS</span>
+        <span class="badge">Angular Material</span>
+        <span class="badge">Bootstrap</span>
+      </div>
     </mat-card>
 
     <mat-card class="skill-card">
-      <h3>Backend</h3>
-      <span class="badge">Node.js</span>
-      <span class="badge">Express</span>
-      <span class="badge">REST API</span>
-    </mat-card>
-
-    <mat-card class="skill-card">
-      <h3>Database</h3>
-      <span class="badge">MSSQL</span>
-      <span class="badge">Stored Procedures</span>
-    </mat-card>
-
-    <mat-card class="skill-card">
-      <h3>Tools</h3>
-      <span class="badge">Git</span>
-      <span class="badge">Postman</span>
-      <span class="badge">VS Code</span>
-      <span class="badge">IIS</span>
+      <h3>Backend & Tools</h3>
+      <div class="badges">
+        <span class="badge">Node.js</span>
+        <span class="badge">Express.js</span>
+        <span class="badge">REST APIs</span>
+        <span class="badge">MSSQL</span>
+        <span class="badge">Git</span>
+        <span class="badge">Postman</span>
+      </div>
     </mat-card>
   </div>
+
+  <mat-card class="chart-card">
+    <h3 class="chart-title">Skill Distribution</h3>
+    <div id="skillsChart" class="chart"></div>
+  </mat-card>
 </section>
 
-<!-- EXPERIENCE -->
 <section #experience class="section alt">
-  <h2>Work Experience</h2>
+  <h2 class="section-title">Work Experience</h2>
   <div class="underline"></div>
 
   <mat-card class="experience-card">
     <h3>AIVA Ventures</h3>
     <p class="role">Assistant Software Engineer · Jul 2024 – Present</p>
     <ul>
-      <li>Developed Angular modules and reusable components</li>
-      <li>Built Node.js APIs with MSSQL integration</li>
-      <li>Implemented QR automation reducing manual effort by 30%</li>
-      <li>Handled IIS deployment & production support</li>
+      <li>Developed reusable Angular modules and enterprise UI components.</li>
+      <li>Built secure Node.js APIs integrated with MSSQL.</li>
+      <li>Implemented <strong>QR-code automation</strong> reducing manual effort from 100% to 70%, improving production
+        and reducing errors.</li>
+      <li>Handled IIS deployments and production support.</li>
     </ul>
+
+    <h4>Roles & Responsibilities:</h4>
+    <ul>
+      <li>Design and implement full-stack solutions for internal dashboards.</li>
+      <li>Optimize performance and scalability of Angular applications.</li>
+      <li>Ensure modular, maintainable architecture.</li>
+      <li>Collaborate with QA and product team to deliver production-ready apps.</li>
+    </ul>
+  </mat-card>
+
+  <mat-card class="chart-card">
+    <h3 class="chart-title">Impact Metrics</h3>
+    <div id="impactChart" class="chart"></div>
+    <p class="impact-note">
+      QR-code automation reduced manual effort from <strong>100%</strong> to <strong>70%</strong>, increasing production
+      efficiency.
+    </p>
   </mat-card>
 </section>
 
-<!-- PROJECTS -->
 <section #projects class="section">
-  <h2>Projects</h2>
+  <h2 class="section-title">Projects</h2>
   <div class="underline"></div>
-
   <div class="card-grid">
     <mat-card class="project-card">
       <h3>Dashboard System</h3>
-      <p>Angular dashboard using ECharts with real-time data.</p>
+      <p>Real-time Angular dashboard using ECharts for monitoring KPIs.</p>
     </mat-card>
-
     <mat-card class="project-card">
       <h3>ERP – Core Cycle Production</h3>
-      <p>Production tracking ERP with QR scanning.</p>
+      <p>Production tracking ERP with QR scanning to reduce manual errors and increase efficiency.</p>
     </mat-card>
-
     <mat-card class="project-card">
       <h3>Daily Planning Module</h3>
-      <p>Task planning with Node.js APIs & email automation.</p>
+      <p>Task planning with API integration and automated email notifications.</p>
     </mat-card>
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
-<section #achievements class="section highlight">
-  <h2>Achievements</h2>
+<section #achievements class="section alt">
+  <h2 class="section-title">Achievements</h2>
   <div class="underline"></div>
-
-  <h3>🏆 Department Topper Award</h3>
-  <p>Recognized on Vijay TV – Celebrity Bala Hand.</p>
+  <div class="card-grid">
+    <mat-card class="achievement-card">
+      <h3>Department Topper Award</h3>
+      <p><strong>Ganesh College of Engineering, Salem</strong></p>
+      <p>Year: 2023 & 2024</p>
+      <p class="achievement-desc">
+        Recognized as the top performer in the department for consistent academic excellence.
+      </p>
+    </mat-card>
+  </div>
 </section>
 
-<!-- CONTACT (PROFESSIONAL FIX) -->
 <section #contact class="section contact-section">
-  <h2>Get In Touch</h2>
+  <h2 class="section-title">Get In Touch</h2>
   <div class="underline"></div>
+  <p class="contact-sub">Open to Angular / Full-Stack Developer opportunities.</p>
 
-  <p class="contact-sub">
-    Open to Angular / Full-Stack Developer opportunities. Let’s build something great.
-  </p>
-
-  <mat-card class="contact-card">
-    <div class="contact-item">
-      <mat-icon>email</mat-icon>
-      <span>bharathmern@gmail.com</span>
-    </div>
-
-    <div class="contact-item">
-      <mat-icon>phone</mat-icon>
-      <span>+91 63830 62724</span>
-    </div>
-
-    <div class="contact-item">
-      <mat-icon>link</mat-icon>
-      <a href="https://www.linkedin.com/in/bharath-ragunathan" target="_blank">
-        linkedin.com/in/bharath-ragunathan
-      </a>
-    </div>
-  </mat-card>
+  <div class="contact-cards">
+    <mat-card class="contact-card">
+      <div class="contact-item">
+        <mat-icon>email</mat-icon>
+        <span>bharathmern@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <mat-icon>phone</mat-icon>
+        <span>+91 63830 62724</span>
+      </div>
+      <div class="contact-item">
+        <mat-icon>link</mat-icon>
+        <a href="https://www.linkedin.com/in/bharath-ragunathan" target="_blank">linkedin.com/in/bharath-ragunathan</a>
+      </div>
+    </mat-card>
+  </div>
 </section>
 
-<!-- SCROLL TO TOP -->
 <button class="scroll-top" *ngIf="showScrollTop" (click)="scrollToTop()">
   <mat-icon>keyboard_arrow_up</mat-icon>
 </button>
