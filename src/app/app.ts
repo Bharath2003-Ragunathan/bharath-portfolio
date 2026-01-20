@@ -82,21 +82,51 @@ export class App implements AfterViewInit {
   }
 
   initImpactChart() {
-    const chartEl = document.getElementById('impactChart');
-    if (!chartEl) return;
-    const chart = echarts.init(chartEl);
-    chart.setOption({
-      tooltip:{ trigger:'axis', formatter:'{b}: {c}%' },
-      xAxis:{ type:'category', data:['Before','After'] },
-      yAxis:{ type:'value', name:'Manual Effort (%)' },
-      series:[{
-        type:'bar',
-        data:[100,70],
-        label:{show:true, position:'top', formatter:'{c}%', fontWeight:'700', color:'#fff'},
-        itemStyle:{ color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'#3f51b5'},{offset:1,color:'#5c6bc0'}]) }
-      }]
-    });
-  }
+  const chartEl = document.getElementById('impactChart');
+  if (!chartEl) return;
+
+  const chart = echarts.init(chartEl);
+
+  chart.setOption({
+    tooltip: {
+      trigger: 'axis',
+      formatter: '{b}: {c}%'
+    },
+    xAxis: {
+      type: 'category',
+      data: ['Before', 'After']
+    },
+    yAxis: {
+      type: 'value',
+      name: 'Manual Effort (%)',
+      max: 100
+    },
+    series: [
+      {
+        type: 'bar',
+        data: [100, 70],
+        barWidth: '45%',
+
+        label: {
+          show: true,
+          position: 'top',
+          formatter: '{c}%',
+          fontSize: 14,
+          fontWeight: '700',
+          color: '#1f2937'   
+        },
+
+        itemStyle: {
+          borderRadius: [6, 6, 0, 0],
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: '#3f51b5' },
+            { offset: 1, color: '#5c6bc0' }
+          ])
+        }
+      }
+    ]
+  });
+}
 
   scroll(el: HTMLElement) { el.scrollIntoView({ behavior:'smooth' }); }
   scrollToTop() { window.scrollTo({ top:0, behavior:'smooth' }); }
