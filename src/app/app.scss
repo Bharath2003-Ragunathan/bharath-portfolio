@@ -101,3 +101,57 @@ mat-card:hover { transform:translateY(-6px); box-shadow:0 16px 45px rgba(0,0,0,0
   .hero h2 { font-size:24px; }
   .chart { height:250px; }
 }
+
+.projects-section .project-card {
+  border-left: 5px solid #3f51b5;
+  padding: 28px;
+}
+
+.projects-section .highlight-project {
+  border-left: 5px solid #ffca28;
+  background: linear-gradient(135deg, #fffdf5, #fff7d6);
+}
+
+.project-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.project-tech {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3f51b5;
+  margin-bottom: 14px;
+}
+
+.project-card h4 {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.project-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.project-card ul {
+  padding-left: 18px;
+  margin: 8px 0;
+}
+
+.project-card ul li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.project-impact {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed #ddd;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3f51b5;
+}
