@@ -124,53 +124,53 @@
 
   <div class="card-grid">
 
-    <!-- Dashboard -->
-    <mat-card class="project-card">
-      <h3>Real-Time Analytics Dashboard</h3>
-      <p class="project-tech">Angular · ECharts · REST APIs</p>
+<!-- Dashboard -->
+<mat-card class="project-card">
+  <h3>Real-Time Analytics Dashboard</h3>
+  <p class="project-tech">Angular · ECharts · REST APIs</p>
 
-      <h4>Problem</h4>
-      <p>
-        Business teams relied on static reports, which caused delayed decisions
-        and limited visibility into real-time performance metrics.
-      </p>
+  <h4>Problem</h4>
+  <p>
+    Loading large date-range data caused slow performance and browser freezing,
+    impacting user experience and decision-making.
+  </p>
 
-      <h4>Solution</h4>
-      <ul>
-        <li>Developed a dynamic Angular dashboard using ECharts.</li>
-        <li>Visualized KPIs using bar, line, pie, and gauge charts.</li>
-        <li>Integrated REST APIs to fetch and update live data.</li>
-        <li>Optimized performance and responsiveness for all screen sizes.</li>
-      </ul>
+  <h4>Solution</h4>
+  <ul>
+    <li>Implemented data grouping and aggregation to reduce large datasets.</li>
+    <li>Optimized API responses and chart rendering in ECharts.</li>
+    <li>Improved Angular change detection for smoother UI performance.</li>
+    <li>Ensured responsive and stable dashboard behavior.</li>
+  </ul>
 
-      <p class="project-impact">
-        Impact: Enabled real-time insights and faster decision-making.
-      </p>
-    </mat-card>
+  <p class="project-impact">
+    Impact: Eliminated browser freezing and significantly improved dashboard load time.
+  </p>
+</mat-card>
 
-    <!-- Core Cycle Production -->
-    <mat-card class="project-card highlight-project">
-      <h3>ERP – Core Cycle Production System</h3>
-      <p class="project-tech">Angular · Node.js · MSSQL · QR Automation</p>
+<!-- Core Cycle Production -->
+<mat-card class="project-card highlight-project">
+  <h3>ERP – Core Cycle Production System</h3>
+  <p class="project-tech">Angular · Node.js · MSSQL · QR Automation</p>
 
-      <h4>Problem</h4>
-      <p>
-        Manual data entry during production cycles resulted in frequent errors,
-        slow operations, and inaccurate production tracking.
-      </p>
+  <h4>Problem</h4>
+  <p>
+    QR code scanning failed because browser security blocked camera access on
+    HTTP-hosted applications.
+  </p>
 
-      <h4>Solution</h4>
-      <ul>
-        <li>Developed a production ERP module using Angular.</li>
-        <li>Integrated ZXing ngx-scanner for real-time QR code scanning.</li>
-        <li>Automated data capture to eliminate manual entry.</li>
-        <li>Designed interactive UI components for shop-floor users.</li>
-      </ul>
+  <h4>Solution</h4>
+  <ul>
+    <li>Created a separate HTTPS-hosted QR scanning page using IIS.</li>
+    <li>Integrated ZXing ngx-scanner for secure camera access.</li>
+    <li>Redirected users to the secure page and returned scanned data automatically.</li>
+    <li>Added verification before saving production data.</li>
+  </ul>
 
-      <p class="project-impact">
-        Impact: Reduced manual effort and improved production accuracy.
-      </p>
-    </mat-card>
+  <p class="project-impact">
+    Impact: Enabled secure QR scanning and restored smooth production workflow.
+  </p>
+</mat-card>
 
     <!-- Daily Planning -->
     <mat-card class="project-card">
